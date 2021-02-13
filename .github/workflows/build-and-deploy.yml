@@ -3,7 +3,7 @@ name: Optimize map and deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
@@ -22,10 +22,10 @@ jobs:
       - name: Bash
         run: |
           ls -al
-          git config --global user.email "d.negrier@thecodingmachine.com"
-          git config --global user.name "David Négrier"
-          git checkout master
-          git commit -am "Adding files"
+          git config --global user.email "fabian@nuvole.org"
+          git config --global user.name "Fabian Bircher"
+          git checkout main
+          git commit -am "Adding optimised files"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: . # The folder the action should deploy.
-          BASE_BRANCH: master
+          BASE_BRANCH: main
 
       - name: Bash2
         run: |
